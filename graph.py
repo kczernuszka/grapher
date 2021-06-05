@@ -7,7 +7,6 @@ class Graph():
         self.G = nx.Graph()
 
     def createFromAdjMatrix(self, input):
-        print(input)
         matrix = self.__getMatrixFromInput(input)
         self.G = nx.from_numpy_matrix(matrix)
         self.__drawGraph()
