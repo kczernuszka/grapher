@@ -10,3 +10,10 @@ class Test_graph(unittest.TestCase):
         self.graph.createFromAdjMatrix(input)
         self.assertEqual(self.graph.G.number_of_nodes(), 5)
         self.assertEqual(self.graph.G.number_of_edges(), 6)
+
+    def testCreateFromIncMatrix(self):
+        input = ("1 1 0 0 0 0\n1 0 1 1 0 0\n0 1 1 0 1 0\n0 0 0 1 1 1\n"
+            "0 0 0 0 0 1\n")
+        self.graph.createFromIncMatrix(input)
+        self.assertEqual(self.graph.G.number_of_nodes(), 5)
+        self.assertEqual(self.graph.G.number_of_edges(), 6)
