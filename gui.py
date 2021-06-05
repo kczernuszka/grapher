@@ -15,10 +15,15 @@ class Gui():
             text_area.get("1.0",END))
         from_inc_matrix = lambda: self.graph.createFromIncMatrix(
             text_area.get("1.0",END))
+        from_adj_list = lambda: self.graph.createFromAdjList(
+            text_area.get("1.0",END))
         adjacent_button = Button(buttonsframe,
             text="Macierz sąsiedztwa", command=from_adj_matrix)
         incidence_button = Button(buttonsframe,
             text="Macierz incydencji", command=from_inc_matrix)
+        adjlist_button = Button(buttonsframe,
+            text="Lista sąsiedztwa", command=from_adj_list)
         adjacent_button.pack(pady=10)
         incidence_button.pack(pady=10)
+        adjlist_button.pack(pady=10)
         self.main_window.mainloop()

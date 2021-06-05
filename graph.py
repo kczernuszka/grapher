@@ -18,6 +18,11 @@ class Graph():
         self.G = nx.from_numpy_matrix(am)
         self.__drawGraph()
 
+    def createFromAdjList(self, input):
+        adj_list = input.splitlines()
+        self.G = nx.parse_adjlist(adj_list, nodetype=int)
+        self.__drawGraph()
+
     def __getMatrixFromInput(self, input):
         input = input.replace("\n", ";")[:-1]
         return np.matrix(input)

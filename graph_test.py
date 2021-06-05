@@ -17,3 +17,9 @@ class Test_graph(unittest.TestCase):
         self.graph.createFromIncMatrix(input)
         self.assertEqual(self.graph.G.number_of_nodes(), 5)
         self.assertEqual(self.graph.G.number_of_edges(), 6)
+
+    def testCreateFromAdjList(self):
+        input = "1 2 3\n2 1 3 4\n3 1 2 4\n4 2 3 5\n5 4\n"
+        self.graph.createFromAdjList(input)
+        self.assertEqual(self.graph.G.number_of_nodes(), 5)
+        self.assertEqual(self.graph.G.number_of_edges(), 6)
