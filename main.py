@@ -1,5 +1,8 @@
+from gui import Gui
+
 def main():
-  pass
+    gui = Gui()
+    gui.createMainWindow()
 
 if __name__ == "__main__":
-  main()
+    main()
