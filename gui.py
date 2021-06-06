@@ -19,9 +19,12 @@ class Gui():
             self.graph.createFromAdjList(self.text_area.get("1.0",END)))
 
         self.__createLabel("Kolorowanie grafu:", 0, 1)
-        self.__createButton("Według etykiety", 2, 1, None)
-        self.__createButton("Malejąco wg stopni wierzchołka", 3, 1, None)
-        self.__createButton("Losowo", 4, 1, None)
+        self.__createButton("Według etykiety", 2, 1,
+            lambda: self.graph.colorGraph("connected_sequential_dfs"))
+        self.__createButton("Malejąco wg stopni wierzchołka", 3, 1,
+            lambda: self.graph.colorGraph("largest_first"))
+        self.__createButton("Losowo", 4, 1,
+            lambda: self.graph.colorGraph("random_sequential"))
 
         self.__createLabel("Przeszukiwanie grafu:", 0, 2)
         nodes_list = StringVar()

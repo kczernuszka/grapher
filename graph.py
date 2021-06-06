@@ -22,6 +22,12 @@ class Graph():
         self.G = nx.parse_adjlist(adj_list, nodetype=int)
         self.__drawGraph()
 
+    def colorGraph(self, strategy):
+        d = nx.coloring.greedy_color(self.G,strategy=strategy)
+        colors = [d[k] for k in sorted(d.keys())]
+        plt.clf()
+        nx.draw(self.G, with_labels=True, font_weight='bold', node_color=colors)
+
     def __getMatrixFromInput(self, input):
         input = input.replace("\n", ";")[:-1]
         return np.matrix(input)
