@@ -4,6 +4,7 @@ class Gui():
     def __init__(self, graph):
         self.main_window = Tk()
         self.main_window.geometry("700x400")
+        self.main_window.title("Grapher")
         self.graph = graph
         self.text_area = Text(self.main_window, width=20, height=10)
 
