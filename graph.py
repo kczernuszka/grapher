@@ -28,6 +28,9 @@ class Graph():
         plt.clf()
         nx.draw(self.G, with_labels=True, font_weight='bold', node_color=colors)
 
+    def dfSearch(self, text):
+        text.set(list(nx.dfs_edges(self.G, source=0)))
+
     def __getMatrixFromInput(self, input):
         input = input.replace("\n", ";")[:-1]
         return np.matrix(input)
