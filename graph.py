@@ -31,6 +31,9 @@ class Graph():
     def dfSearch(self, text):
         text.set(list(nx.dfs_edges(self.G, source=0)))
 
+    def selectBridges(self, text):
+        text.set(list(nx.bridges(self.G)))
+
     def __getMatrixFromInput(self, input):
         input = input.replace("\n", ";")[:-1]
         return np.matrix(input)

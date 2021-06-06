@@ -28,11 +28,15 @@ class Gui():
 
         self.__createLabel("Przeszukiwanie grafu:", 0, 2)
         nodes_list = StringVar()
+        bridges_list = StringVar()
         self.__createButton("Przeszukiwanie w głąb", 2, 2,
             lambda: self.graph.dfSearch(nodes_list))
-        self.__createButton("Zaznacz krawędzie krytyczne", 3, 2, None)
-        self.__createLabel("Wynik przeuszkiwania:", 4, 2)
+        self.__createButton("Zaznacz krawędzie krytyczne", 3, 2,
+            lambda: self.graph.selectBridges(bridges_list))
+        self.__createLabel("Wynik przeuszkiwania:", 4, 2,)
         Label(self.main_window, textvariable=nodes_list).grid(row=5, column=2)
+        self.__createLabel("Krawędzie krytyczne:", 6, 2)
+        Label(self.main_window, textvariable=bridges_list).grid(row=7, column=2)
 
         self.main_window.mainloop()
 
