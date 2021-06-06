@@ -6,6 +6,6 @@ Graphs can be created from:
 - incidence matrix
 - adjacent list
 
-![Image of the application window] (grapher.png)
+![Image of the application window](grapher.png)
 
-![Image of the graph] (graph.png)
+![Image of the graph](graph.png)
